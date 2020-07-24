@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /* div{
+            width: 1000px;
+            height: 200px;
+            background-color: cyan;
+            margin: 100px auto;
+        }
+        .left{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: darkgoldenrod;
+            margin: 0;
+            
+        }
+        .right{
+            float: left;
+            width: 800px;
+            height: 200px;
+            background-color:darkgreen;
+            margin: 0;
+            
+        }
+        div .left a{
+            display: block;
+            height: 40px;
+            background-color:rgba(255, 255, 0, 0.5);
+            text-decoration: none;
+            color: white;
+            padding-left: 20px;
+            line-height: 40px;
+        }
+        div .left a:hover{
+            background-color: rgba(243, 22, 22, 0.5);
+            color: black;
+            font-size: 20px;
+        } */
+
+
+        /* .tupian{
+            width: 200px;
+            height: 300px;
+            background-color: royalblue;
+            margin: 100px auto;
+            
+        }
+        .tupian img{
+           margin:30px 0 0 56px;
+        }
+        .tupian .wenzi{
+            font-size: 14px;
+            height: 50px;
+            padding: 0 28px;
+            margin-top: 20px;
+        }
+        .tupian .date{
+            padding: 0 28px;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        .tupian .price{
+            margin-top: 20px;
+            padding: 0 28px;
+        }
+        .tupian h4{
+            display: inline-block;
+            font-weight: 400;
+        } */
+
+
+        /* div{
+            width: 200px;
+            height: 300px;
+            background-color: cadetblue;
+            margin:100px auto;
+        }
+        div h3{
+            border-bottom: 1px dotted black;
+            font-weight: 500;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+        div ul li{
+            font-size: 16px;
+            color: cornsilk;
+            list-style: none;
+            padding-left: 30px;
+            margin-top: 5px;
+        }
+        div ul li:hover{
+            text-decoration: underline;
+            font-size: 20px;
+        }
+        div ul{
+            margin-top: 30px;
+        } */
+
+
+        /* div{
+            width: 1000px;
+            height: 200px;
+            background-color: darkgreen;
+            margin: 0 auto;
+        }
+        li{
+            list-style: none;
+            width: 240px;
+            height: 200px;
+            background-color: darkkhaki;
+            float: left;
+            margin-left: 8px;
+        } */
+
+
+        /* .box{
+            width: 1000px;
+            height: 200px;
+            background-color: darkkhaki;
+            margin: 0 auto;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            background-color: darkmagenta;
+            float: left;
+        }
+        .right{
+            width: 800px;
+            height: 200px;
+            background-color:darkorange;
+            float: left;
+        }
+        .right div {
+            width: 190px;
+            height: 90px;
+            background-color: darkslategrey;
+            float: left;
+            margin-left: 5px;
+            margin-top: 5px;
+        } */
+
+
+        .header{
+            width: 1000px;
+            height: 60px;
+            margin: 10px auto;
+        }
+        body{
+            background-color: rgba(214, 233, 203, 0.747);
+        }
+        .logo{
+            float: left;
+            width: 100px;
+            height: 60px;
+            background-color: darkturquoise;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        li{
+            list-style: none;
+        }
+        .nav{
+            float: left;
+            height: 60px;
+            margin-left: 20px;
+        }
+        .nav li{
+           float: left;  
+           margin-left: 30px;
+        }
+        .nav li a{
+            display: block;
+            height: 60px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            line-height: 60px;
+        }
+        .nav li a:hover{
+           border-bottom: 2px solid lightseagreen;
+           color: lightseagreen;
+           line-height: 52px;
+        }
+        .search{
+            float: left;
+            height: 60px;
+            margin-left: 200px;
+        }
+        .search #text{
+            float: left;
+            width: 130px;
+            height: 40px;
+            border: 0;
+            margin-top: 9px;
+            color: gray;
+            font-size: 20px;
+            padding-left: 20px;
+            border: 1px solid lightseagreen;
+            border-right: 0;
+            outline: none;
+        }
+        .search #button{
+            float: left;
+            height: 42px;
+            width: 42px;
+            margin-top: 9px;
+            border: 0;
+            font-size: 12px;
+            color: black;
+            background-color: lightseagreen;
+            outline: none;
+        }
+        .user{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .user .img{
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            background-color: indianred;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .user span{
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 20px;
+            vertical-align: middle;
+            
+        }
+        .banner{
+            height: 400px;
+            background-color: rgba(138, 186, 240, 0.747);
+        }
+        .banner .banner-nav{
+            position: relative;
+            height: 400px;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: salmon;
+        }
+        .banner .banner-nav .left{
+            float: left;
+            width: 200px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .banner .banner-nav .left li{
+            margin: 20px 0 20px 20px;
+        }
+        .banner .banner-nav .left li a{
+            display: block;
+            height: 40px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            line-height: 40px;
+        }
+        .banner .banner-nav .left li a::after{
+            content: ">";
+            float: right;
+            margin-right: 10px;
+
+        }
+        .banner .banner-nav .left li a:hover{
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+        .banner .banner-nav .right{
+            float: right;
+            height: 200px;
+            width: 200px;
+            background-color: turquoise;
+            margin-top: 100px;
+            border-radius: 5%;
+            right: 0;
+        }
+        .banner .banner-nav .right::after{
+            content: '';
+            display: none;
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.521);
+            border-radius: 5%;
+            right: 0;
+        }
+        .banner .banner-nav .right:hover::after{
+            display: block;
+        }
+        .ins{
+            height: 50px;
+            width: 1000px;
+            margin: 10px auto;
+            box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            line-height: 50px;
+            text-align: center;
+        }
+        .ins .ins-1{
+            float: left;
+            width: 100px;
+        }
+        .ins .ins-2{
+            float: left;  
+        }
+        .ins .ins-2 li{
+            float: left;
+        }
+        .ins .ins-2 li span{
+            float: left;
+        }
+        .ins .ins-2 li a{
+            float: left;
+            height: 50px;
+            width: 100px;
+            text-decoration: none;
+            color: black;
+        }
+        .ins .ins-3{
+            float: right;
+            width: 100px; 
+        }
+        
+        .products{
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .products .products-head{
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        .products .products-head h2{
+            float: left;
+        }
+        .products .products-head h3{
+            float: right;
+        }
+        .products .products-body li{
+            float: left;
+            position: relative;
+        }
+        .products .products-body ul{
+            width: 1005px;
+        }
+        .products .products-body li .yuan{
+            width: 20px;
+            height: 20px;
+            background-color:crimson;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .products .products-body li a{
+            float: left;
+            width: 246.25px;
+            height: 297.5px;
+            background-color: chocolate;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .footer{
+            height: 400px;
+            background-color: chartreuse;
+        }
+        .footer div{
+            width: 1000px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: cornflowerblue;
+            position: relative;
+        }
+        .footer .footer-left{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            border-radius: 50%;
+            margin-top: 30px;
+        }
+        .footer .footer-right{
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            background-color:crimson;
+            right:0;
+            bottom: 0;
+        }
+        .footer .footer-right span{
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-right-color: crimson;
+            left: -40px;
+
+        }
+        .promo{
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            background-color: forestgreen;
+            margin: 0 auto;  
+        }
+
+        .promo .prev, .promo .next{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            top:50%;
+            margin-top: -25px;
+        }
+        .promo .prev:hover, .promo .next:hover{
+            background-color: rgba(212, 18, 60, 0.5);
+        }
+        .promo .prev{
+            left: -25px;
+        }
+        .promo .next{   
+            right:-25px;
+        }
+        .promo .bottom{
+            position: absolute;
+            width: 200px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 7px;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+        }
+        .promo .bottom li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            margin-left: 12px;
+            margin-top: 2px;
+        }
+    
+        
+
+
+
+        /* .c1{
+           width: 800px; 
+           height: 800px;
+           background-color: crimson;
+        }
+        .c2{
+           width: 400px; 
+           height: 400px;
+           background-color: rgb(20, 220, 127);
+           
+        }
+        .c3{
+           width: 200px; 
+           height: 200px;
+           background-color: rgb(220, 217, 20);
+           
+
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <div>
+        <div class="left">
+            <a href="#">qqq</a>
+            <a href="#">aaa</a>
+            <a href="#">zzz</a>
+            <a href="#">www</a>
+            <a href="#">sss</a>
+        </div>
+        <div class="right">you</div>
+        
+    
+    </div> -->
+    
+
+    <!-- <div class="tupian">
+        <img src="未命名22222222222.png">
+        <p class="wenzi">adgdfagdfgdadfhagsdf</p>
+        <div class="date">235902350923</div>
+        <div class="price">
+            <h4>sdfsdsdsdfs</h4> | <span>45.99</span>
+        </div>
+    </div> -->
+
+
+    <!-- <div>
+        <h3>this ish is ihsif</h3>
+        <ul>
+            <li>adggdfgd</li>
+            <li>adggdfgd</li>
+            <li>adggdfgd</li>
+            <li>adggdfgd</li>
+            <li>adggdfgd</li>
+        </ul>
+    </div> -->
+
+<!-- 
+    <div>
+        <ul>
+            <li>123</li>
+            <li>234</li>
+            <li>345</li>
+            <li>456</li>
+        </ul>
+    </div> -->
+
+
+    <!-- <div class="box">
+        <div class="left">
+        </div>
+        <div class="right">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+    </div> -->
+
+
+    <div class="header">
+        <div class="logo">This is logo for displaying</div>
+        <div class="nav">
+            <ul>
+                <li> <a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" id="text" placeholder="Search...">
+            <button id="button">button</button>
+        </div>
+        <div class="user">
+            <div class="img"></div>
+            <span>nick zhang</span>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-nav">
+            <div class="left">
+                <ul>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Internet</a></li>
+                    <li><a href="#">Boradband</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">TV</a></li>
+                </ul>
+            </div>
+            
+            <div class="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="ins">
+        <div class="ins-1"><p>Ins</p></div>
+        <div class="ins-2">
+            <ul>
+                <li><a href="#">APPLE</a><span>|</span></li>
+                <li><a href="#">HUAWEI</a><span>|</span></li>
+                <li><a href="#">NOVA</a><span>|</span></li>
+                <li><a href="#">NOKIA</a><span>|</span></li>
+            </ul>
+        </div>
+        <div class="ins-3"><p>Close</p></div>
+    </div>
+
+    <div class="promo">
+        <div class="prev"></div>
+        <div class="next"></div>
+        <div class="bottom">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="products-head">
+            <h2>Apple</h2>
+            <h3>More</h3>
+        </div>
+        <div class="products-body">
+            <ul>
+                <li><a href="#">1<div class="yuan"></div></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div>
+        <div class="footer-left"></div>
+        <div class="footer-right">
+            <span></span>
+        </div>
+        </div> 
+    </div>
+
+
+
+<!-- 
+    <div class="c1">
+        <div class="c2">
+            <div class="c3">
+
+            </div>
+        </div>
+    </div> -->
+</body>
+
+</html>
