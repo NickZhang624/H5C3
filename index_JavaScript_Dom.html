@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* .input1{
+        border: 1px solid red;
+    }
+    .worng{
+        font-size: 45px;
+        color: red;
+    }
+    .p1{
+        font-weight: bolder;
+    }
+    .right{
+        font-size: 45px;
+        color: green;
+    }
+
+    .li1{
+        background-color: green;
+    }
+    .li2{
+        background-color: yellow;
+    }
+    .li3{
+        background-color: red;
+    }
+    .li4{
+        background-color: purple;
+    }
+
+
+
+    div{
+        margin: 0 auto;
+        width: 1000px;
+        background-color: lightgreen;
+    }
+
+
+    li{
+        list-style: none;
+        display: inline-block;
+        background-color: lightblue;
+        width: 50px;
+        height: 30px;
+        margin: 3px;
+    }
+
+    ul .cur{
+        background-color: red;
+    }
+
+    .dierge{
+        background-color: lightcoral;
+    }
+
+    .dierge div{
+        display: none;
+    } */
+
+
+
+    ul .nav{
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: lightsalmon;
+        margin-right: 20px;
+    }
+
+    ul .nav .title{
+        font-size: 30px;
+        height: 50px;
+        display: inline-block;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    .nav ul{
+        position: absolute;
+        width: 50px;
+        background-color: lightslategrey;
+        display: none;
+        
+    }
+    .nav ul li{
+        font-size: 20px;
+        line-height: 40px;
+    }
+    a{
+        margin-left: 40px;
+    }
+
+
+</style>
+<body>
+    <!-- <div>
+        <input type="password" id="input1" value="">
+        <P class="p1" id="p1">no more 3 words</P> 
+    </div>
+    
+    <script>
+        var input1 =document.getElementById("input1");
+        var p1 = document.getElementById('p1');
+        
+        input1.onblur=function(){
+            if( input1.value.length< 10){
+                p1.innerHTML="worng";
+                p1.className="p1 worng";
+            }else{
+                p1.className="p1 right";
+                p1.innerHTML="right";
+            }
+        }
+        input1.onfocus=function(){
+            p1.innerHTML="";
+        }
+        
+       
+        
+    </script> -->
+
+
+    <!-- <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+    <script>
+        var btn = document.getElementsByTagName('button');
+        for( var i=0;i<btn.length;i++){
+            btn[i].onclick=function(){
+                for(var i=0; i<btn.length;i++){
+                    btn[i].style.backgroundColor='';
+                    btn[i].style.width='';
+                }
+                this.style.backgroundColor='pink';
+                this.style.width="150px";
+            }
+        }
+    </script> -->
+
+
+    <!-- <ul class="diyi">
+        <li class="li1" style="background-color: purple;"></li>
+        <li class="li2" style="background-color: purple;"></li>
+        <li class="li3" style="background-color: purple;"></li>
+        <li class="li4" style="background-color: purple;"></li>
+    </ul>
+
+    <script>
+
+
+        var div = document.querySelector('.diyi').querySelectorAll('li');
+        for( var i=0;i<div.length;i++){
+            div[i].onclick=function(){
+                for(var i=0; i<div.length;i++){
+                    div[i].style.backgroundColor='';
+                }
+                document.body.style.backgroundColor = "pink";
+            }
+        }
+    </script> -->
+
+
+    <!-- <table style="border: 1px solid black; width: 500px; height: 300px;">
+        <thead>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>345</td>
+                <td>567</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>345</td>
+                <td>567</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>345</td>
+                <td>567</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123</td>
+                <td>345</td>
+                <td>567</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        var ff = document.querySelector('tbody').querySelectorAll('tr');
+
+        for (var i = 0; i < ff.length; i++){
+            ff[i].onmouseover = function(){
+                this.style.backgroundColor="red";
+            }
+            ff[i].onmouseout = function(){
+                this.style.backgroundColor='';
+            }
+
+        }
+
+
+        var gg = document.querySelector('tbody').querySelectorAll('input');
+        var nn = document.querySelector('thead').querySelector('input');
+
+        nn.onclick=function(){
+            for (var i = 0; i < gg.length; i++){
+                gg[i].checked=this.checked;
+            }
+        }
+
+        for (var i =0; i < gg.length; i++){
+            gg[i].onclick=function(){
+                flag= true;
+                for (var i =0; i < gg.length; i++){
+                    if(!gg[i].checked){
+                        flag=false;
+                    }
+                }
+                nn.checked=flag;
+            }
+        }
+
+        var vv =document.querySelector('table');
+        console.log(vv.setAttribute('width', '100px'));
+    </script> -->
+
+
+    <!-- <div>
+        <div>
+            <ul>
+                <li class="cur">ggg</li>
+                <li>fff</li>
+                <li>yyy</li>
+            </ul>
+        </div>
+        <div class="dierge">
+            <div style="display: block;">conten1</div>
+            <div>conten2</div>
+            <div>conten4</div>
+        </div>
+    </div>
+
+
+    <script>
+        var aa = document.querySelector('ul');
+        var bb = aa.querySelectorAll('li');
+        var cc = document.querySelector('.dierge');
+        var dd = cc.querySelectorAll('div');
+
+        for (var i=0; i < bb.length; i++){
+            bb[i].setAttribute('index',i);
+            bb[i].onclick=function(){
+                for (var i=0; i < bb.length; i++){
+                    bb[i].className='';
+                }
+
+                this.className="cur";
+                var index = this.getAttribute('index');
+                for (var i=0; i < dd.length; i++){
+                    dd[i].style.display='none';
+                }
+                dd[index].style.display='block';
+            }
+
+        }
+    </script> -->
+
+
+    <!-- <ul class="diyi">
+        <li class="nav">
+            <a class="title">aaa</a>
+            <ul>
+                <li><a>111</a></li>
+                <li><a>122</a></li>
+                <li><a>113</a></li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a class="title">bbb</a>
+            <ul>
+                <li><a>111</a></li>
+                <li><a>122</a></li>
+                <li><a>113</a></li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a class="title">ccc</a>
+            <ul>
+                <li><a>111</a></li>
+                <li><a>122</a></li>
+                <li><a>113</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        var aa = document.querySelector('.diyi');
+        var bb = aa.children;
+
+        for(var i =0; i<bb.length;i++){
+        bb[i].onmouseover = function(){
+            this.children[1].style.display="block";
+        }
+        bb[i].onmouseout = function(){
+            this.children[1].style.display="none";
+        }
+        }
+        console.log(bb);
+    </script> -->
+
+
+    <textarea></textarea>
+    <button>ggg</button>
+    <ul>
+        <li>sdfsd</li>
+    </ul>
+    
+    <script>
+        var aa = document.querySelector('textarea');
+        var bb = document.querySelector('button');
+        var cc = document.querySelector('ul');
+
+        bb.onclick=function(){
+            if(aa.value == ''){
+                alert('msg');
+            }else{
+                var li = document.createElement('li');
+                li.innerHTML=aa.value + "<a href='javascript:;'>delete</a>";
+                cc.insertBefore(li,cc.children[0]);
+                aa.value ='';
+
+                var as = document.querySelectorAll('a');
+                for(var i = 0;0<as.length;i++){
+                    as[i].onclick=function(){
+                        cc.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
