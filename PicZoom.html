@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .da{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: lightsalmon;
+        }
+        .da .aa{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .da .mask{
+            display: none;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(239, 255, 16, 0.5);
+            top:0;
+            left: 0;
+            cursor: move;
+        }
+        .da .big{
+            display: none;
+            position: absolute;
+            left: 105%;
+            top: 0;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            background-color: blueviolet;
+        }
+        .da .big img{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+        <div class="da">
+    <div class="aa">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png">
+        </div>
+    </div>
+    </div>
+
+    <script>
+        var qq = document.querySelector('.da .aa')
+        var ww =document.querySelector('.da .mask')
+        var ee =document.querySelector('.da .big')
+        var rr = document.querySelector('.da .big img')
+        qq.addEventListener('mouseover', function(){
+            ww.style.display="block"
+            ee.style.display="block"
+
+        })
+        qq.addEventListener('mouseout', function(){
+            ww.style.display="none"
+            ee.style.display="none"
+        })
+        qq.addEventListener('mousemove',function(e){
+            var x = e.pageX - this.offsetLeft
+            var y = e.pageY - this.offsetTop
+
+            var xx=x-ww.offsetWidth/2
+            var yy =y-ww.offsetHeight/2
+            console.log(xx, yy);
+
+            if(xx<0){
+                xx=0;
+            }else if(xx>150){
+                xx=150;
+            }
+            if(yy<0){
+                yy=0
+            }else if(yy>150){
+                yy=150
+            }
+            ww.style.left=xx+'px'
+            ww.style.top=yy+'px'
+
+            var bigmax=rr.offsetWidth -ee.offsetWidth
+            var bigx = xx*bigmax/150;
+            var bigy = yy*bigmax/300;
+
+            rr.style.left=-bigx+'px'
+            rr.style.top=-bigy+'px'
+
+
+        })
+    </script>
+
+</body>
+</html>
