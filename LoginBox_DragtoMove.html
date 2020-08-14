@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .title{
+            width: 50px;
+            height: 30px;
+            background-color: green;
+            margin: 0 auto;
+        }
+        .login{
+            display: none;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            border-radius: 5px;
+            transform:translate(-50%,-50%);
+            position: fixed;
+            top:50%;
+            left:50%;
+            box-shadow:0px 0px 20px lightblue;
+            z-index: 3;
+        }
+        .login .text{
+            width: 200px;
+            font-size: 20px;
+            display: block;
+            background-color: lightsalmon;
+            text-align: center;
+        }
+        .login .text span{
+            font-size: 13px;
+            font-weight: 700;
+            width: 30px;
+            height: 30px;
+            background-color: lightslategray;
+            border-radius: 50%;
+            float: right;
+            margin-right: -10px;
+            margin-top: -10px;
+            line-height: 30px;
+        }
+        .login .form{
+            display: block;
+            text-align: center;
+            line-height: 30px;
+            background-color: limegreen;
+            margin-top: 20%;
+        }
+        .login button{
+            width: 50px;
+            height: 30px;
+            display: block;
+            margin-left: 50%;
+            transform:translate(-50%,0);
+            margin-top: 10%;
+        }
+        .mask{
+            display: none;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(68, 78, 68, 0.2);
+        }
+
+
+
+    </style>
+    <script src="js/animate.js"></script>
+</head>
+<body>
+    <div class="title"><a href="#">ggg</a></div>
+    <div class="login">
+        <div class="text">login<span>close</span></div>
+        <div class="form">
+            <input type="text">
+            <input type="password">
+        </div>
+        <button>login in </button>
+    </div>
+    <div class="mask"></div>
+
+    <script>
+        var aa = document.querySelector('.title a')
+        var bb = document.querySelector('.login')
+        var cc = document.querySelector('.mask')
+        var dd = bb.querySelector('.text span')
+        aa.addEventListener('click',function(){
+             bb.style.display="block";
+             cc.style.display="block";
+             bb.style.top='50%';
+             bb.style.left='50%';
+        })
+        dd.addEventListener('click',function(){
+            bb.style.display="none";
+            cc.style.display="none";
+        })
+        bb.addEventListener('mousedown', function(e){
+            var x = e.pageX - this.offsetLeft
+            var y = e.pageY - this.offsetTop
+            document.addEventListener('mousemove',move)
+
+            function move(e) {
+                bb.style.left=e.pageX - x +'px'
+                bb.style.top=e.pageY - y +'px'
+            }
+
+            document.addEventListener('mouseup',function(){
+                document.removeEventListener('mousemove',move)
+            })         
+        })
+    </script>
+
+
+ 
+</body>
+</html>
