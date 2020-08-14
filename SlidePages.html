@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .da{
+            width: 400px;
+            height: 200px;
+            background-color: lightseagreen;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .da .left, .da .right{
+            width: 30px;
+            height: 20px;
+            background-color: lime;
+            position: absolute;
+            top:90px;
+            cursor: pointer;
+            z-index: 3;
+            display: none;
+        }
+        .da .left{
+            left: 0;
+        }
+        .da .right{
+            right:0;
+        }
+        .da .dian{
+            position: absolute;
+            bottom: 0;
+            left: 170px;
+        }
+        .da .dian li{
+            font-size: 20px;
+            background-color: lightcoral;
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .da .tu{
+            width: 1600px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .da .tu li{
+            list-style: none;
+            float: left;
+            width: 400px;
+            height: 200px;
+        }
+        .da .dian .cur{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="da">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <ul class="tu">
+            <li style="background-color: green;">1</li>
+            <li style="background-color: red;">2</li>
+            <li style="background-color: yellow;">3</li>
+        </ul>
+        <ul class="dian">
+        </ul>
+    </div>
+
+    <script>
+        var da = document.querySelector('.da')
+        var left = document.querySelector('.left')
+        var right = document.querySelector('.right')
+        var tu = document.querySelector('.tu')
+        var dian = document.querySelector('.dian')
+        var width = da.offsetWidth
+
+        da.addEventListener('mouseover',function(){
+            left.style.display="block";
+            right.style.display="block";
+            clearInterval(timer)
+            timer=null
+        })
+        da.addEventListener('mouseout',function(){
+            left.style.display="none";
+            right.style.display="none";
+            timer = setInterval(function(){
+            right.click();
+        },2000)
+        })
+
+        for(var i = 0; i < tu.children.length;i++){
+            var li = document.createElement('li')
+            dian.appendChild(li)
+            li.setAttribute('index',i)
+
+            li.addEventListener('click',function(){
+                for (var i = 0; i<dian.children.length;i++){
+                    dian.children[i].className=''
+                }
+                this.className='cur'
+                var index = this.getAttribute('index')
+                num = index
+                circle = index
+                animate(tu,-index*width)
+            })
+        }
+        dian.children[0].className='cur'
+
+        var first = tu.children[0].cloneNode(true)
+        tu.appendChild(first)
+        
+        var num = 0
+        var circle = 0
+        var flag =true
+        right.addEventListener('click',function(){
+            if(flag){
+                flag=false
+                if(num == tu.children.length-1){
+                tu.style.left = 0
+                num = 0
+            }
+            num++
+            animate(tu,-num*width, function(){
+                flag=true
+            })
+
+            circle++
+            if(circle == tu.children.length-1){
+                circle=0
+            }
+            for(var i = 0; i < dian.children.length; i++){
+                dian.children[i].className=''
+            }
+            dian.children[circle].className='cur'
+            }
+            
+            
+        })
+        left.addEventListener('click',function(){
+            if(flag){
+                flag=false
+                if(num == 0){
+                num = tu.children.length - 1
+                tu.style.left = - num * width +'px'
+            }
+            num--
+            animate(tu,-num*width,function(){
+                flag=true
+            })
+
+            circle--
+            if(circle <0){
+                circle= dian.children.length -1
+            }
+            for(var i = 0; i < dian.children.length; i++){
+                dian.children[i].className=''
+            }
+            dian.children[circle].className='cur'
+            }
+            
+        })
+
+        var timer = setInterval(function(){
+            right.click();
+        },2000)
+
+
+
+
+        function animate(obj, target, callback){
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function(){
+                var step = (target -obj.offsetLeft)/10
+                step = step>0?Math.ceil(step): Math.floor(step)
+                if(obj.offsetLeft == target){
+                    clearInterval(obj.timer)
+                    if(callback){
+                        callback()
+                    }
+                }
+                obj.style.left=obj.offsetLeft+step+'px'
+            }, 30);
+        }
+    </script>
+    
+</body>
+</html>
