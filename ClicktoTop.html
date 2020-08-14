@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+                .head{
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+            height: 200px;
+            background-color: burlywood;
+        }
+        .nav{
+            margin: 0 auto;
+            width: 1000px;
+            height: 50px;
+            background-color: cadetblue;
+        }
+        .main{
+            margin: 0 auto;
+            width: 1000px;
+            height: 1000px;
+            background-color:crimson;
+        }
+        .bar{
+            position: absolute;
+            width: 70px;
+            height: 150px;
+            background-color: darkolivegreen;
+            top:350px;
+        }
+    </style>
+</head>
+<body>
+        <div class="bar">bar</div>
+    <div class="head">head</div>
+    <div class="nav">nav</div>
+    <div class="main">main</div>
+
+    <script>
+        var bar =document.querySelector('.bar')
+        var head =document.querySelector('.head')
+        var nav =document.querySelector('.nav')
+        var main =document.querySelector('.main')
+        bar.style.left = 1000 + head.offsetLeft + 'px';
+        var a =bar.offsetTop
+
+        document.addEventListener('scroll',function(){
+            if(window.pageYOffset >= head.offsetHeight){
+                bar.style.position="fixed";
+                bar.style.top=a - head.offsetHeight + 'px';
+            }else{
+                bar.style.position="absolute";
+                bar.style.top=a + 'px';
+            }
+
+            if(window.pageYOffset >= head.offsetHeight){
+                bar.style.backgroundColor="black"
+            }else{
+                bar.style.backgroundColor="darkolivegreen"
+            }
+
+            bar.addEventListener('click',function(){
+                animate1(window,0)
+            })
+        })
+        console.log(main.offsetLeft)
+        function animate1(obj, target, callback){
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function(){
+                var step = (target -window.pageYOffset)/10
+                step = step>0?Math.ceil(step): Math.floor(step)
+                if(window.pageYOffset == target){
+                    clearInterval(obj.timer)
+                    if(callback){
+                        callback()
+                    }
+                }
+                window.scroll(0,window.pageYOffset+step)
+            }, 30);
+}
+    </script>
+</body>
+</html>
