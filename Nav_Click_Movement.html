@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            position: relative;
+            background-color: lightcoral;
+            height: 100px;
+        }
+        .nav .pic{
+            background-color: lightseagreen;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+        }
+        .nav ul li{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: lightskyblue;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <span class="pic"></span>
+        <ul>
+            <li>123</li>
+            <li>456</li>
+            <li>789</li>
+            <li>012</li>
+        </ul>
+    </div>
+
+    <script>
+        var pic = document.querySelector('.pic')
+        var nav = document.querySelector('.nav')
+        var liz = nav.querySelectorAll('li')
+
+        var cur = 0 
+        for(var i=0;i<liz.length;i++){
+            liz[i].addEventListener('mouseenter',function(){
+                animate(pic,this.offsetLeft)
+            })
+            liz[i].addEventListener('mouseleave',function(){
+                animate(pic,cur)
+            })
+            liz[i].addEventListener('click',function(){
+                cur = this.offsetLeft
+            })
+        }
+
+
+
+        function animate(obj, target, callback){
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function(){
+                var step = (target -obj.offsetLeft)/10
+                step = step>0?Math.ceil(step): Math.floor(step)
+                if(obj.offsetLeft == target){
+                    clearInterval(obj.timer)
+                    if(callback){
+                        callback()
+                    }
+                }
+                obj.style.left=obj.offsetLeft+step+'px'
+            }, 10);
+        }
+    </script>
+    
+</body>
+</html>
