@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav>li{
+            display: inline-block;
+            margin-left: 5px;
+            background-color: brown;
+            width: 100px;
+            height: 20px;
+            text-align: center;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .nav li ul{
+            width: 100px;
+            position: absolute;
+            background-color: chocolate;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a>1</a>
+            <ul>
+                <li>qqq</li>
+                <li>www</li>
+                <li>eeee</li>
+            </ul>
+        </li>
+        <li>
+            <a>2</a>
+            <ul>
+                <li>www</li>
+                <li>sss</li>
+                <li>ddd</li>
+            </ul>
+        </li>
+        <li>
+            <a>3</a>
+            <ul>
+                <li>ddd</li>
+                <li>ggg</li>
+                <li>rrr</li>
+            </ul>
+        </li>
+        <li>
+            <a>4</a>
+            <ul>
+                <li>yyy</li>
+                <li>fff</li>
+                <li>bbb</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $('.nav').children('li').mousemove(function(){
+            $(this).children('ul').show()
+        })
+        $('.nav').children('li').mouseout(function(){
+            $(this).children('ul').hide()
+        })
+    </script>
+</body>
+</html>
