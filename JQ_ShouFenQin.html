@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .da{
+            width: 600px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+        }
+        li{
+            list-style: none;
+        }
+        .da ul{
+            overflow: hidden;
+        }
+        .da li{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .small{ 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+        .big{
+            display: none;
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+        }
+        .da .cur{
+            width: 200px;
+        }
+        .da .cur .small{
+            display: none;
+        }
+        .da .cur .big{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="da">
+        <ul>
+            <li class="cur">
+                <div class="small" style="background-color: lightgreen;"></div>
+                <div class="big" style="background-color: green;"></div>
+            </li>
+            <li>
+                <div class="small" style="background-color: lightgrey;"></div>
+                <div class="big" style="background-color: grey;"></div>
+            </li>
+            <li>
+                <div class="small" style="background-color: lightpink;"></div>
+                <div class="big" style="background-color: pink;"></div>
+            </li>
+            <li>
+                <div class="small" style="background-color: lightblue;"></div>
+                <div class="big" style="background-color: blue;"></div>
+            </li>
+        </ul>
+    </div>
+   
+    <script>
+        $('.da li').mouseenter(function(){
+            $(this).stop().animate({width:200}).find('.small').stop().fadeOut().siblings('.big').stop().fadeIn()
+            $(this).siblings('li').stop().animate({width:100}).find('.small').stop().fadeIn().siblings('.big').stop().fadeOut()
+        })
+        
+    </script>
+</body>
+</html>
