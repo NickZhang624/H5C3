@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .da{
+            width: 600px;
+            height: 400px;
+            background-color: lightgrey;
+            margin: 10px auto;
+        }
+        li{
+            list-style: none;
+        }
+        .da li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="da">
+        <ul>
+            <li style="background-color: black;"></li>
+            <li style="background-color: blue;"></li>
+            <li style="background-color: red;"></li>
+            <li style="background-color: yellow;"></li>
+            <li style="background-color: darkcyan;"></li>
+            <li style="background-color: saddlebrown;"></li>
+        </ul>
+    </div>
+   
+    <script>
+        $('.da li').hover(function(){
+            $(this).siblings().stop().fadeTo(300,0.5)
+        },function(){
+            $(this).siblings().stop().fadeTo(300,1)
+        })
+        
+    </script>
+</body>
+</html>
