@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .da{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+        .da ul li{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="da">
+    <span>Posting</span>
+    <textarea cols="40" rows="10"></textarea>
+    <button>Post</button>
+    <ul></ul>
+</div>
+   
+    <script>
+        $('.da button').on("click",function(){
+            var li = $('<li></li>')
+            li = li.html($(this).siblings('textarea').val()+"<a href='javascript:;'>Delete</a>")
+            $(this).siblings('ul').prepend(li)
+            li.slideDown()
+            $(this).siblings('textarea').val('')
+        })
+
+        $('.da ul').on('click','a',function(){
+            $(this).parent().slideUp(function(){
+                $(this).remove()
+            })
+        })
+    </script>
+</body>
+</html>
